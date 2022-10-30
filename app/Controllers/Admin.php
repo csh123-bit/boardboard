@@ -6,6 +6,6 @@ class Admin extends BaseController
 {
     public function index()
     {
-        echo 'hello world!';
+        return view('admin\main\main');
     }
 }

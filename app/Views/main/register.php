@@ -13,7 +13,7 @@
 
 <div class="container mt-5">
   <h2>회원가입</h2>
-  <form action="/action_page.php">
+  <form method="POST">
     <div class="form-group">
       <label for="user_id">아이디:</label>
       <input type="text" class="form-control" id="user_id" placeholder="아이디" name="user_id">

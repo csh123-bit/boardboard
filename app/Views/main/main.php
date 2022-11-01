@@ -19,8 +19,8 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
-                <a class="btn btn-primary" href="#signup">Sign Up</a>
+                <a class="navbar-brand" href="#!">BoardBoard</a>
+                <a class="btn btn-primary" href="/home/register">회원가입</a>
             </div>
         </nav>
         <!-- Masthead-->

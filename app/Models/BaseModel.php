@@ -10,7 +10,7 @@ class BaseModel extends Model
 
     protected $table          = 'board_user';
     protected $primaryKey     = 'usr_idx';
-    protected $returnType     = 'object';
+    protected $returnType     = 'array';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [];
     protected $useTimestamps      = true;

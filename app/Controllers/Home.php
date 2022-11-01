@@ -11,6 +11,32 @@ class Home extends BaseController
         return view('main\main');
     }
 
+    public function login(){
+
+        return view('/main/login');
+    }
+
+    public function login_proc(){
+        $info = $this->request->getPost();
+        if($info){
+            $user = new UserModel();
+            $user_info = $user->where('usr_id', $info['user_id'])->get()->getRowArray();
+            if(!empty($user_info)){
+                if(password_verify($info['user_password'], $user_info['usr_password'])){
+                    echo 'logged in';
+                    exit();
+                }else{
+                    echo 'password wrong';
+                    exit();
+                }
+            }else{
+                echo 'id not exist';
+                exit();
+            }
+        }
+        return view('/main/login');
+    }
+
     public function register(){
 
         $validate = $this->validate([

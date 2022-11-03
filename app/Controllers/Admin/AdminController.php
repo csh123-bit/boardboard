@@ -1,11 +1,59 @@
 <?php
 namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
+use Psr\Log\LoggerInterface;
 
 class AdminController extends BaseController
 {
-    public function index()
+    protected $session;
+
+    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
-        return view('admin\main\main');
+        parent::initController($request, $response, $logger);
+
+        $this->session = \Config\Services::session();
+    }
+
+    public function getAdminMenu(){
+        $menu = array();
+
+        $menu['user'] = array(
+            "name"=>"회원 관리",
+            "icon"=>"fa_users",
+            "link"=>"",
+            "sub_menu"=>array(
+                "user"=>array("name"=>"회원관리", "link"=>"/"),
+                "admin"=>array("name"=>"관리자", "link"=>"/"),
+            )
+        );
+
+        $menu['popup'] = array(
+            "name"=>"팝업 관리",
+            "icon"=>"fa_users",
+            "link"=>"",
+            "sub_menu"=>array(
+            )
+        );
+
+        $menu['board'] = array(
+            "name"=>"게시판 관리",
+            "icon"=>"fa_users",
+            "link"=>"",
+            "sub_menu"=>array(
+            )
+        );
+
+        $menu['promise'] = array(
+            "name"=>"약관 관리",
+            "icon"=>"fa_users",
+            "link"=>"",
+            "sub_menu"=>array(
+            )
+        );
+
+
+        return $menu;
     }
 }

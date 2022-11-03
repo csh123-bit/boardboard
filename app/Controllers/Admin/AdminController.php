@@ -8,17 +8,20 @@ use Psr\Log\LoggerInterface;
 class AdminController extends BaseController
 {
     protected $session;
+    protected $menu;
 
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         parent::initController($request, $response, $logger);
 
+        $this->menu = $this->getAdminMenu();
+
         $this->session = \Config\Services::session();
     }
 
-    public function render(){
-        $menu = $this->getAdminMenu();
-        
+    public function render($viewPath='', $data=[]){
+
+        return view($viewPath, $data);
     }
 
     private function getAdminMenu(){

@@ -29,7 +29,7 @@ class AdminController extends BaseController
 
         $menu['user'] = array(
             "name"=>"회원 관리",
-            "icon"=>"fa_users",
+            "icon"=>"fas fa-users",
             "link"=>"",
             "sub_menu"=>array(
                 "user"=>array("name"=>"회원관리", "link"=>"/"),
@@ -39,7 +39,7 @@ class AdminController extends BaseController
 
         $menu['popup'] = array(
             "name"=>"팝업 관리",
-            "icon"=>"fa_users",
+            "icon"=>"fas fa-table",
             "link"=>"",
             "sub_menu"=>array(
             )
@@ -47,7 +47,7 @@ class AdminController extends BaseController
 
         $menu['board'] = array(
             "name"=>"게시판 관리",
-            "icon"=>"fa_users",
+            "icon"=>"fas fa-columns",
             "link"=>"",
             "sub_menu"=>array(
             )
@@ -55,7 +55,7 @@ class AdminController extends BaseController
 
         $menu['promise'] = array(
             "name"=>"약관 관리",
-            "icon"=>"fa_users",
+            "icon"=>"fas fa-chart-area",
             "link"=>"",
             "sub_menu"=>array(
             )

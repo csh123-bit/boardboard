@@ -27,7 +27,8 @@ class Admin extends AdminController
                 $user_info = $user->where('usr_id', $info['user_id'])->get()->getRowArray();
                 if(!empty($user_info)){
                     if(password_verify($info['user_password'], $user_info['usr_password'])){
-                        return view('/admin/main/main');
+                        $data['menu'] = $this->menu;
+                        return view('/admin/main/main', $data);
                     }else{
                         echo 'password wrong';
                         exit();

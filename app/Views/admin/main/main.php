@@ -32,7 +32,7 @@
                                 Dashboard
                             </a>
                             <?php foreach($menu as $key=>$menu1){ ?>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="<?php echo '#'.$key ?>" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="<?php echo $menu1['link'] ?>" data-bs-toggle="collapse" data-bs-target="<?php echo '#'.$key ?>" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="<?php echo $menu1['icon'] ?>"></i></div>
                                 <?php echo $menu1['name'] ?>
                                 <?php if(count($menu1['sub_menu'])>0){?>
@@ -43,7 +43,7 @@
                                     foreach($menu1['sub_menu'] as $key2 => $menu2){ ?>
                                         <div class="collapse" id="<?php echo $key ?>" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                             <nav class="sb-sidenav-menu-nested nav">
-                                                <a class="nav-link" href="layout-static.html"><?php echo $menu2['name'] ?></a>
+                                                <a class="nav-link" href="<?php echo $menu2['link'] ?>"><?php echo $menu2['name'] ?></a>
                                             </nav>
                                         </div>
                                     <?php } ?>

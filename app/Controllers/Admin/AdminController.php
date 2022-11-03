@@ -1,9 +1,8 @@
 <?php
-
 namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 
-class Admin extends BaseController
+class AdminController extends BaseController
 {
     public function index()
     {

@@ -16,7 +16,12 @@ class AdminController extends BaseController
         $this->session = \Config\Services::session();
     }
 
-    public function getAdminMenu(){
+    public function render(){
+        $menu = $this->getAdminMenu();
+        
+    }
+
+    private function getAdminMenu(){
         $menu = array();
 
         $menu['user'] = array(

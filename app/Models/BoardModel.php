@@ -17,6 +17,91 @@ class BoardModel extends BaseModel
     public function __construct($table_name)
     {
         $this->table = 'board_boards_'.$table_name;
-        
+    }
+
+    public function createTable(){
+        $fields = [
+            'bod_idx' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+                'auto_increment' => true,
+            ],
+            'bod_title' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+            ],
+            'bod_username' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 100,
+                'null' => true,
+            ],
+            'bod_content' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'bod_password' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 100,
+                'null' => true,
+            ],
+            'bod_depth' => [
+                'type'       => 'INT',
+                'constraint' => 11,
+                'null' => true,
+            ],
+            'bod_group' => [
+                'type'       => 'INT',
+                'constraint' => 11,
+                'null' => true,
+            ],
+            'bod_created_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'null' => true,
+            ],
+            'bod_created_ip' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'null' => true,
+            ],
+            'bod_created_at' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'null' => true,
+            ],
+            'bod_updated_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'null' => true,
+            ],
+            'bod_updated_ip' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'null' => true,
+            ],
+            'bod_updated_at' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'null' => true,
+            ],
+            'bod_deleted_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'null' => true,
+            ],
+            'bod_deleted_ip' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'null' => true,
+            ],
+            'bod_deleted_at' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'null' => true,
+            ],  
+        ];
+        $forge = \Config\Database::forge();
+        $forge->addField($fields)->addPrimaryKey('bod_idx')->createTable($this->table);
     }
 }

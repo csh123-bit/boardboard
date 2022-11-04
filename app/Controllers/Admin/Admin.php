@@ -35,7 +35,7 @@ class Admin extends AdminController
                     return view('/admin/main/main', $data);
                 }
             }
-            echo '<script>alert("아이디나 비밀번호가 틀렸습니다.");
+            echo '<script>alert("아이디나 비밀번호를 확인해주세요.");
                 window.location.href = "/admin/admin";
                 </script>';
         }

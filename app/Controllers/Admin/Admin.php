@@ -2,7 +2,6 @@
 
 namespace App\Controllers\Admin;
 
-use App\Models\BoardModel;
 use App\Models\UserModel;
 use App\Modules\User;
 
@@ -33,8 +32,6 @@ class Admin extends AdminController
                 $user = new User();
                 $passResult = $user->passwordCheck($info);
                 if($passResult&&$_SESSION['u_manager']){
-                    $testBoard = new BoardModel('test');
-                    $testBoard->createTable();
                     return view('/admin/main/main', $data);
                 }
             }

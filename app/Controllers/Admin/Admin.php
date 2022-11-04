@@ -26,13 +26,13 @@ class Admin extends AdminController
             if($info){
                 $user = new User();
                 $passResult = $user->passwordCheck($info);
-                if($passResult){
+                if($passResult&&$_SESSION['u_manager']){
                     $data['menu'] = $this->menu;
                     return view('/admin/main/main', $data);
                 }
             }
             echo '<script>alert("아이디나 비밀번호가 틀렸습니다.");
-                    window.location.href = "/admin/admin";
+                window.location.href = "/admin/admin";
                 </script>';
         }
     }

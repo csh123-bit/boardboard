@@ -9,6 +9,11 @@ class Admin extends AdminController
 {
     public function index()
     {
+        $data['menu'] = $this->menu;
+        if(isset($_SESSION['u_manager'])&&$_SESSION['u_manager']){
+            return view('/admin/main/main', $data);
+        }
+
         $validate = $this->validate([
             'user_id' => [
                 'rules'=>'required',
@@ -27,7 +32,6 @@ class Admin extends AdminController
                 $user = new User();
                 $passResult = $user->passwordCheck($info);
                 if($passResult&&$_SESSION['u_manager']){
-                    $data['menu'] = $this->menu;
                     return view('/admin/main/main', $data);
                 }
             }

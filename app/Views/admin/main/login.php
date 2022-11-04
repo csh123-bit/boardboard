@@ -13,7 +13,7 @@
 
 <div class="container mt-5">
   <h2 class="mt-5">로그인</h2>
-  <form method="POST">
+  <form method="POST" action="/admin/admin">
     <div class="form-group">
       <label for="user_id">Email:</label>
       <input type="text" class="form-control" id="user_id" placeholder="아이디" name="user_id" required>

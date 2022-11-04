@@ -5,17 +5,16 @@ namespace App\Models;
 class BoardConfigModel extends BaseModel
 {
     protected $table          = 'board_boards_config';
-    protected $prefix         = 'bbc';
+    protected $prefix         = 'boc';
     protected $allowedFields  = [
-        'bbc_idx','bbc_username','bbc_title','bbc_content',
-        'bbc_password','bbc_depth','bbc_group',
-        'bbc_created_id','bbc_created_ip','bbc_created_at',
-        'bbc_updated_id','bbc_updated_ip','bbc_updated_at',
-        'bbc_deleted_id','bbc_deleted_ip','bbc_deleted_at'
+        'boc_idx','boc_code','boc_title','boc_skin',
+        'boc_list_size','boc_file_count','boc_file_size',
+        'boc_image_view','boc_new_time','boc_secret',
+        'boc_private','boc_category','boc_fixed_title',
+        'boc_auth_list','boc_auth_read','boc_auth_write',
+        'boc_auth_reply','boc_auth_comment','boc_manager',
+        'boc_created_id','boc_created_ip','boc_created_at',
+        'boc_updated_id','boc_updated_ip','boc_updated_at',
+        'boc_deleted_id','boc_deleted_ip','boc_deleted_at'
     ];
-
-    public function __construct($table_name)
-    {
-        $this->table = 'board_boards_'.$table_name;
-    }
 }

@@ -102,6 +102,6 @@ class BoardModel extends BaseModel
             ],  
         ];
         $forge = \Config\Database::forge();
-        $forge->addField($fields)->addPrimaryKey('bod_idx')->createTable($this->table);
+        $forge->addField($fields)->addPrimaryKey('bod_idx')->createTable($this->table, true);
     }
 }

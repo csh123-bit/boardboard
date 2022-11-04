@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Models\UserModel;
+use App\Modules\User;
 
 class Admin extends AdminController
 {
@@ -23,22 +24,16 @@ class Admin extends AdminController
         }else{
             $info = $this->request->getPost();
             if($info){
-                $user = new UserModel();
-                $user_info = $user->where('usr_id', $info['user_id'])->get()->getRowArray();
-                if(!empty($user_info)){
-                    if(password_verify($info['user_password'], $user_info['usr_password'])){
-                        $data['menu'] = $this->menu;
-                        return view('/admin/main/main', $data);
-                    }else{
-                        echo 'password wrong';
-                        exit();
-                    }
-                }else{
-                    echo 'id not exist';
-                    exit();
+                $user = new User();
+                $passResult = $user->passwordCheck($info);
+                if($passResult){
+                    $data['menu'] = $this->menu;
+                    return view('/admin/main/main', $data);
                 }
             }
-            return view('/admin/main/login');
+            echo '<script>alert("아이디나 비밀번호가 틀렸습니다.");
+                    window.location.href = "/admin/admin";
+                </script>';
         }
     }
 

@@ -30,4 +30,15 @@ class User{
             return false;
         }
     }
+
+    public function sessionClear(){
+        unset($_SESSION['u_idx']);
+        unset($_SESSION['u_id']);
+        unset($_SESSION['u_name']);
+        unset($_SESSION['u_phonenumber']);
+        unset($_SESSION['u_level']);
+        unset($_SESSION['u_manager']);
+
+        return true;
+    }
 }

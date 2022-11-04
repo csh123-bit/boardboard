@@ -41,4 +41,11 @@ class Admin extends AdminController
         return view('admin\main\login');
     }
 
+    public function logout(){
+        $user = new User();
+        $user->sessionClear();
+
+        return view('admin\main\login');
+    }
+
 }

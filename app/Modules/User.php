@@ -8,11 +8,8 @@ class User{
         $user = new UserModel();
         $user_info = $user->where('usr_id', $info['user_id'])->get()->getRowArray();
         if(!empty($user_info)){
-            if(password_verify($info['user_password'], $user_info['usr_password'])){
-                return true;
-            }else{
-                return false;
-            }
+            $result = password_verify($info['user_password'], $user_info['usr_password']);
+            return $result;
         }else{
             return false;
         }

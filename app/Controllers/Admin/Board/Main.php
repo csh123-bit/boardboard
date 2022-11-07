@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Controllers\Admin;
+namespace App\Controllers\Board;
 
-use App\Models\UserModel;
-use App\Modules\User;
+use App\Controllers\Admin\AdminController;
 
 class Main extends AdminController
 {
     public function index()
     {
-        echo 'board';
-        exit();
+        
+        return view('/admin/board/main');
     }
 }

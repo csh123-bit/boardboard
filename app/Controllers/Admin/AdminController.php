@@ -48,10 +48,19 @@ class AdminController extends BaseController
         $menu['board'] = array(
             "name"=>"게시판 관리",
             "icon"=>"fas fa-columns",
+            "link"=>"/admin/admin/board",
+            "sub_menu"=>array(
+            )
+        );
+
+        $menu['menu'] = array(
+            "name"=>"메뉴 관리",
+            "icon"=>"fas fa-chart-area",
             "link"=>"",
             "sub_menu"=>array(
             )
         );
+
 
         $menu['promise'] = array(
             "name"=>"약관 관리",

@@ -32,7 +32,7 @@
                                 Dashboard
                             </a>
                             <?php foreach($menu as $key=>$menu1){ ?>
-                            <a class="nav-link collapsed" href="<?php echo $menu1['link'] ?>" data-bs-toggle="collapse" data-bs-target="<?php echo '#'.$key ?>" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="<?php echo $menu1['link'] ?>" <?php if(count($menu1['sub_menu'])>0){echo 'data-bs-toggle="collapse"';} ?> data-bs-target="<?php echo '#'.$key ?>" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="<?php echo $menu1['icon'] ?>"></i></div>
                                 <?php echo $menu1['name'] ?>
                                 <?php if(count($menu1['sub_menu'])>0){?>

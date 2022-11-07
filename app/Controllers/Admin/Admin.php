@@ -52,4 +52,10 @@ class Admin extends AdminController
         return view('admin\main\login');
     }
 
+    public function board()
+    {
+        echo 'board';
+        exit();
+    }
+
 }

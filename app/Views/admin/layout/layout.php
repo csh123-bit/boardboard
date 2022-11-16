@@ -17,7 +17,7 @@
             <a class="navbar-brand ps-3" href="index.html">Admin</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            
+
             <ul class="navbar-nav d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <a href="/admin/admin/logout" class="btn btn-primary">로그아웃</a>
             </ul>
@@ -32,7 +32,7 @@
                                 Dashboard
                             </a>
                             <?php foreach($menu as $key=>$menu1){ ?>
-                            <a class="nav-link collapsed" href="<?php echo $menu1['link'] ?>" data-bs-toggle="collapse" data-bs-target="<?php echo '#'.$key ?>" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="<?php echo $menu1['link'] ?>" <?php if(count($menu1['sub_menu'])>0){echo 'data-bs-toggle="collapse"';} ?> data-bs-target="<?php echo '#'.$key ?>" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="<?php echo $menu1['icon'] ?>"></i></div>
                                 <?php echo $menu1['name'] ?>
                                 <?php if(count($menu1['sub_menu'])>0){?>

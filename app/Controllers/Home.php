@@ -63,7 +63,7 @@ class Home extends BaseController
         ]);
 
         if(!$validate){
-            return view('main\register');
+            return view('/main/register');
         }else{
             $info =  $this->request->getPost();
             $password = password_hash($info['user_password'], PASSWORD_DEFAULT);

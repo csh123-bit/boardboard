@@ -33,8 +33,8 @@ class Database extends Config
     public $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => 'postgres',
-        'password' => '1q2w3e1q',
+        'username' => 'root',
+        'password' => '12qwas',
         'database' => 'boardboard',
         'DBDriver' => 'Postgre',
         'DBPrefix' => '',

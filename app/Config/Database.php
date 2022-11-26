@@ -36,7 +36,7 @@ class Database extends Config
         'username' => 'postgres',
         'password' => '1q2w3e1q',
         'database' => 'boardboard',
-        'DBDriver' => 'postgre',
+        'DBDriver' => 'Postgre',
         'DBPrefix' => '',
         'pConnect' => false,
         'DBDebug'  => (ENVIRONMENT !== 'production'),

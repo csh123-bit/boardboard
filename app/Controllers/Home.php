@@ -69,6 +69,7 @@ class Home extends BaseController
             $password = password_hash($info['user_password'], PASSWORD_DEFAULT);
             $data = [
                 'usr_id' => $info['user_id'],
+                'usr_name' => $info['user_name'],
                 'usr_password' => $password,
                 'usr_email' => $info['user_email'],
                 'usr_phonenumber' => $info['user_phonenumber'],

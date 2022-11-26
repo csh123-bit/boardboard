@@ -34,7 +34,7 @@ class Database extends Config
         'DSN'      => '',
         'hostname' => 'localhost',
         'username' => 'root',
-        'password' => '12qwas',
+        'password' => '1q2w3e',
         'database' => 'boardboard',
         'DBDriver' => 'Postgre',
         'DBPrefix' => '',

@@ -82,4 +82,9 @@ class Home extends BaseController
             };
         }
     }
+
+    public function calender(){
+
+        return view('/main/calender');
+    }
 }
